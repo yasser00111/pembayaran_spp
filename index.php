@@ -1,93 +1,48 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+	<title>LOGIN UKK SPP</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Aplikasi SPP">
+	<meta name="author" content="Aplikasi SPP">
+	<link rel="shortcut icon" href="img/logosmk5.png" />
+	<link rel="stylesheet" href="css/bootstrap-4_4_1.min.css">
+	<link rel="stylesheet" href="css/style_login.css">
+	</head>
+	<body>
+		<!-- SweetAlert2 -->
+	  <div class="info-data" data-infodata="<?php if(isset($_SESSION['info'])){ echo $_SESSION['info']; } unset($_SESSION['info']); ?>"></div>
 
-<head>
+		<div class="kotak">
+			<form class="form-signin" action="proses.php" method="post" >
+				<img src="img/logosmk5.png" alt="SPP Login" width="80px" height="50px" style="margin-left:25px;">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Aplikasi Pembayaran SPP </title>
-
-  <!-- Custom fonts for this template-->
-  <link href="template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
-
-</head>
-
-<body class="bg-gradient-primary">
-
-  <div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-      <div class="col-lg-7"> <!-- -->
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <!---->
-              <div class="col-lg"> <!-- -->
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">LOGIN SISWA</h1>
-                  </div>
-                  <form action="login_siswa.php" method="post">
-                    <div class="form-group">
-                      <input type="number" name="nisn" class="form-control form-control-user" placeholder="NISN">
-                    </div>
-                    <div class="form-group">
-                      <input type="number" name="nis" class="form-control form-control-user" placeholder="NIS">
-                    </div>
-                  <input type="submit" value="login" class="btn btn-primary btn-user btn-block">
-                    <!-- <a href="" class="btn btn-primary btn-user btn-block">
-                      Login
-                    </a> -->
-                    <hr>
-                    <!-- ini hapus -->
-                    <!-- <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a> -->
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="index_petugas.php">sebagai petugas/admin?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="template/vendor/jquery/jquery.min.js"></script>
-  <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="template/js/sb-admin-2.min.js"></script>
-
-</body>
-
+				<div style="margin-left:120px;margin-top:-35px;font-size:22px; margin-bottom:15px;">Aplikasi SPP</div>
+				<div class="input-group mb-0 px-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-user text-primary"></i></div>
+					</div>
+					<input type="text" id="username" name="username" class="form-control form-control-sm" placeholder="Username" autocomplete="off" autofocus="on" required>
+				</div>
+				
+				<div class="input-group mb-1 px-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text"><i class="fas fa-key text-primary"></i></div>
+					</div>
+					<input type="password" id="password" name="password" class="form-control form-control-sm" placeholder="Password" autocomplete="off" required>
+				</div>
+				
+				<button class="btn btn-sm btn-primary ml-3" type="submit"><i class="fas fa-lock mx-2"></i> Sign in</button>
+			</form>
+			<h5 class="copy" >Copyright &copy; <?=date('Y');?></h5>
+		</div>
+		<script src="js/jquery/jquery.min.js"></script>
+		<script src="js/fontawesome-5_7_2.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+	  <script src="js/style-sweetalert2.js"></script>
+	</body>
 </html>
